@@ -1,0 +1,154 @@
+<html>
+  <head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Customer Segmentation</title>
+  </head>
+  <body class="font-mono bg-gray-400">
+    <!-- Container -->
+    <div class="container mx-auto">
+      <div class="flex justify-center px-2 my-12">
+        <!-- Row -->
+        <div class="w-full xl:w-3/4 lg:w-11/12 flex">
+          <!-- Col -->
+          <img
+            class="w-full h-auto bg-gray-400 hidden lg:block lg:w-1/2 bg-cover rounded-l-lg"
+            src="{{ url_for('static', filename='img/consuments.jpg') }}"
+          ></img>
+          <!-- Col -->
+          <div class="w-full lg:w-1/2 bg-white p-5 rounded-lg lg:rounded-l-none">
+            <div class="px-8 mb-4 text-center">
+              <h3 class="pt-4 mb-2 text-2xl font-semibold">Customers Segmentation</h3>
+              <p class="mb-4 text-sm text-gray-700">
+                Enter your data and we'll predict your customers segment!
+              </p>
+              
+            </div>
+            <a href="/customers" type="button" class="text-gray-900 bg-white border ml-5 border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">Customers</a>
+
+            <form class="px-8 pt-6 pb-8 mb-4 bg-white rounded" action="/result" method="POST">
+              <div class="mb-4">
+                <label
+                  class="block mb-2 text-sm font-bold text-gray-700"
+                  for="name"
+                >
+                  Name
+                </label>
+                <input required
+                  class="w-full px-3 py-2 text-sm bg-white leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                  id="name"
+                  type="text"
+                  placeholder="Enter name"
+                  name="name"
+                />
+              </div>
+              <div class="mb-4">
+                <label
+                  class="block mb-2 text-sm font-bold text-gray-700"
+                  for="email"
+                >
+                  Email
+                </label>
+                <input required
+                  class="w-full px-3 py-2 text-sm leading-tight bg-white text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                  id="email"
+                  type="text"
+                  placeholder="Enter email"
+                  name="email"
+                />
+              </div>
+              <div class="mb-4 text-gray-700">
+                <label
+                  class="block mb-2 text-sm font-bold text-gray-700"
+                  for="gender"
+                >
+                  Gender
+                </label>
+                <div class="flex items-center gap-1">
+
+                <input required
+                  class=""
+                  id="genderM"
+                  type="radio"
+                  name="gender"
+                  value="Male"
+                />
+                <label for="genderM">Male</label>
+              </div>
+
+              <div class="flex items-center gap-1">
+                <input required
+                class=""
+                id="genderF"
+                type="radio"
+                name="gender"
+                value="Female"
+                />
+                <label for="genderF">Female</label>
+              </div>
+              </div>
+              <div class="mb-4">
+                <label
+                  class="block mb-2 text-sm font-bold text-gray-700"
+                  for="age"
+                >
+                  Age
+                </label>
+                <input required
+                  class="w-full px-3 py-2 text-sm bg-white leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                  id="age"
+                  type="number"
+                  placeholder="Enter Age"
+                  name="age"
+                  min="0"
+                  max="100"
+                />
+              </div>
+              <div class="mb-4">
+                <label
+                  class="block mb-2 text-sm font-bold text-gray-700"
+                  for="annual_income"
+                >
+                  Annual Income (k$)
+                </label>
+                <input required
+                  class="w-full px-3 py-2 text-sm bg-white leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                  id="annual_income"
+                  type="number"
+                  placeholder="Enter Annual Income"
+                  name="annual_income"
+                  min="0"
+                />
+              </div>
+              <div class="mb-4">
+                <label
+                  class="block mb-2 text-sm font-bold text-gray-700"
+                  for="spending_score"
+                >
+                  Spending Score (1-100)
+                </label>
+                <input required
+                  class="w-full px-3 py-2 text-sm bg-white leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                  id="spending_score"
+                  type="number"
+                  placeholder="Enter Spending Score (1-100)"
+                  name="spending_score"
+                  min="0"
+                  max="100"
+                />
+              </div>
+              <div class="mb-2 text-center">
+                <input required
+                  class="w-full px-4 py-2 font-bold text-white bg-indigo-400 hover:bg-indigo-500 cursor-pointer rounded-full focus:outline-none focus:shadow-outline"
+                  type="submit"
+                  value="Submit"
+                >
+                </input>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  
+</html>

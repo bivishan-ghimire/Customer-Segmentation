@@ -1,0 +1,48 @@
+<html>
+  <head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Customer Segmentation</title>
+  </head>
+  <body class="font-sans bg-gray-400">
+    <!-- Container -->
+    <div class="container mx-auto flex justify-center my-12">
+      <div class="bg-white w-full rounded-lg xl:w-3/4 lg:w-11/12 p-5">
+        <a href="/" class="hover:text-indigo-500 w-1/12">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-4 h-4 inline"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"
+            />
+          </svg>
+
+          <p class="inline">Back</p>
+        </a>
+
+        <h3 class="pt-4 text-xl text-center">Hello, {{name}}.</h3>
+        <h3 class="text-2xl text-center">Customers Segmentation Result</h3>
+        <p class="text-xl text-center">{{message}}</p>
+
+        <div class="flex justify-center">
+          <img
+            src="{{ url_for('static', filename='img/result.jpg') }}"
+            alt="result"
+            class="w-96 mb-4 mt-4"
+          />
+        </div>
+        <h2
+          class="text-center text-bold bg-indigo-400 hover:bg-indigo-500 text-white text-xl p-4 mx-16 rounded-lg"
+        >
+          {{ prediction }}
+        </h2>
+      </div>
+    </div>
+  </body>
+</html>

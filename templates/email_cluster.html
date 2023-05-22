@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Email cluster</title>
+  </head>
+  <body class="font-mono bg-gray-400">
+    <div class="container bg-indigo-500 rounded-lg mx-auto pl-12 pt-12 pb-6 justify-center my-12">
+        <h3 class="text-2xl ">Email Cluster</h3>
+        <h3 class="text-2xl ">Are you sure you want to email the following addresses?</h3>
+        <ol class="pl-5 mt-2 space-y-1 list-decimal list-inside">
+            {% for email in email_addresses %}
+                <li class="text-xl" >{{ email }}</li>
+            {% endfor %}
+        </ol>
+            
+    </br>
+        <form method="POST" action="{{ url_for('send_email_cluster', cluster_id=cluster_id) }}">
+          <input required
+          class=" px-3 py-2 text-sm leading-tight bg-white text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+          id="subject"
+          type="text"
+          placeholder="Enter subject"
+          name="subject"
+        />
+        <input required
+                  class="w-50 px-3 py-2 text-sm leading-tight bg-white text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                  id="body"
+                  type="text"
+                  placeholder="Enter body"
+                  name="body"
+                />
+            <button type="submit" class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">Send Email</button>
+        </form>
+        <a href="/customers" type="button" class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">Customers</a>
+
+   </div>
+  </body>
+  
+</html>
